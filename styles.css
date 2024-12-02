@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* <uniquifier>: Use a unique and descriptive class name
+<weight>: Use a value from 100 to 400 */
+
+.playwrite-hr-lijeva-h1 {
+  font-family: "Playwrite HR Lijeva", cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 40px;
+}
+
+header {
+  height: 10vh;
+  background-color: rgb(54, 156, 190);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+header > h1 {
+  margin-left: 20px;
+}
+
+#logo {
+  height: 8vh;
+  border-radius: 50%;
+}
+
+#nav_bar {
+  height: 4vh;
+  width: 100vw;
+  background-color: aliceblue;
+}
+
+#itens-navegacao {
+  height: 4vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-size: 20px;
+}
+
+nav > ul > li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+}
+
+main{
+    width: 100vw;
+    height: 600px;
+    display: flex;   
+    justify-content: center;
+    align-items: center;
+}
+
+#irListaUsuarios{
+    margin-top: 40px;
+    display: flex;
+    justify-content: end;
+    margin-right: 60px;
+    font-size: 20px;
+} 
+
+.playwrite-hr-lijeva-link{
+   font-family: "Playwrite HR Lijeva", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px; 
+}
+
+#caixa-login {
+  height: 30vh;
+  width: 50vw;
+  /* background: rgb(247, 244, 240);  */
+  background-color: lightblue;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  padding: 24px;
+}
+
+#itens-caixa-login {
+    font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 20px;
+}
+
+#itens-caixa-login > inputs {
+  border-radius: 10px;
+}

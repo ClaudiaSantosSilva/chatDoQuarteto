@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Chat do quarteto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playwrite+HR+Lijeva:wght@100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="playwrite-hr-lijeva-h1">Chat do quarteto</h1>
+      <img src="images/logo1.jpg" id = "logo" alt="logo-do-chat" title ="logo-do-chat">
+    </header>
+    <nav id="nav_bar">
+      <ul id="itens-navegacao">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="usuarios.html">Usuários</a></li>
+        <li><a href="paginaChat.html">Chat</a></li>
+      </ul>
+    </nav>
+    <div id="irListaUsuarios" class="playwrite-hr-lijeva-link"><a href="usuarios.html">Lista usuários</a></div>
+    <main>      
+      <div id="caixa-login">
+        <div id="itens-caixa-login">
+          <h2>Faça seu login:</h2>
+          <label for="nome-usuario">Nome do usuário</label>
+          <input type="text" id="nome-usuario" />
+          <label for="imagem-usuario">Coloque sua foto:</label>
+          <input
+            type="file"
+            id="imagem-usuario"
+            name="imagem-usuario"
+            accept="image/png, image/jpeg, image/jpg"
+          />
+        </div>
+        <button type="button" id="salvar-perfil">Salvar</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
