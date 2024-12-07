@@ -8,6 +8,10 @@ class User {
   get nameInitial() {
     return this.name.charAt(0).toUpperCase();
   }
+
+  generateURL() {
+    return `chat.html?id=${this.id}`;
+  }
 }
 
 class Message {
@@ -52,36 +56,41 @@ haUsuariosLocalStorage();
 
 const containerG = document.createElement("div");
 containerG.setAttribute("id", "containerG");
-let main = document.body.firstElementChild.nextElementSibling.nextElementSibling;
+let main =
+  document.body.firstElementChild.nextElementSibling.nextElementSibling;
 main.appendChild(containerG);
 
- let usuarios = obterDoLocalStorage("usuarios").map((usuario)=> new User(usuario.id, usuario.name, usuario.profilePictureURL));
-function exibirListaPerfis() { 
+let usuarios = obterDoLocalStorage("usuarios").map(
+  (usuario) => new User(usuario.id, usuario.name, usuario.profilePictureURL)
+);
+function exibirListaPerfis() {
   usuarios.forEach((usuario) => {
     const containerUsuario = document.createElement("div");
+    containerUsuario.addEventListener("click", () => {
+      window.location.href = usuario.generateURL();
+    });
     containerUsuario.setAttribute("id", "containerUsuario");
-    
-    console.log(usuario)
+
+    //console.log(usuario.generateURL());
     if (usuario.profilePictureURL) {
       const containerProfilePic = document.createElement("img");
-      containerProfilePic.setAttribute("src", usuario.profilePictureURL)
+      containerProfilePic.setAttribute("src", usuario.profilePictureURL);
       containerProfilePic.classList.add("profilePic");
       containerUsuario.appendChild(containerProfilePic);
     } else {
-      const containerNameInitial = document.createElement("div")
-      containerNameInitial.classList.add("firstCharName")
+      const containerNameInitial = document.createElement("div");
+      containerNameInitial.classList.add("firstCharName");
       containerNameInitial.innerHTML = usuario.nameInitial;
-      containerUsuario.appendChild(containerNameInitial) 
+      containerUsuario.appendChild(containerNameInitial);
     }
-    
-    const containerNome = document.createElement("div")
-    containerNome.setAttribute("id", "containerNome")
+
+    const containerNome = document.createElement("div");
+    containerNome.setAttribute("id", "containerNome");
     let identificacaoUsuario = document.createElement("span");
     identificacaoUsuario.innerHTML = usuario.name;
     containerNome.appendChild(identificacaoUsuario);
-    containerUsuario.appendChild(containerNome)
+    containerUsuario.appendChild(containerNome);
     containerG.appendChild(containerUsuario);
-    
   });
 }
 
