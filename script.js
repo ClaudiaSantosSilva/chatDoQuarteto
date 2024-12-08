@@ -48,7 +48,7 @@ function haUsuariosLocalStorage() {
       new User("5", "Richard", undefined),
     ];
 
-    console.log(usuarios);
+    //console.log(usuarios);
     salvarNoLocalStorage("usuarios", usuarios);
   }
 }

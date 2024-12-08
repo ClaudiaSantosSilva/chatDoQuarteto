@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   background-image: url("images/imagemFundo.avif");
 }
 
@@ -61,62 +61,96 @@ nav > ul > li > a {
   text-decoration: none;
 }
 
-main{
-    width: 100vw;
-    height: 1000px;
-    display: flex;  
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center;
+main {
+  width: 100vw;
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#irListaUsuarios{
+#irListaUsuarios {
   width: 20%;
   background-color: antiquewhite;
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    margin-left: 840px;
-    font-size: 22px;
-    border-radius: 30px;
-} 
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  margin-left: 840px;
+  font-size: 22px;
+  border-radius: 30px;
+}
 
-.playwrite-hr-lijeva-link{
-   font-family: "Playwrite HR Lijeva", cursive;
+.playwrite-hr-lijeva-link {
+  font-family: "Playwrite HR Lijeva", cursive;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 40px; 
+  font-size: 40px;
 }
 
-#containerGChat{
+#containerGChat {
   background-color: antiquewhite;
-  width:80%;
+  width: 80%;
   height: 800px;
   /* margin-top: 90px; */
   display: flex;
   flex-direction: column;
   /* justify-content: center*/
   align-items: center;
-  gap:20px; 
-  border-radius:40px;
+  gap: 20px;
+  border-radius: 40px;
   /* padding:20px; */
 }
 
-.containerDonoPagina{
-    width:100%;
-    height: 80px;
-    background-color: aliceblue;
+.containerDonoPagina {
+  width: 100%;
+  height: 80px;
+  background-color: aliceblue;
+  border-radius: 30px 30px 0px 0px;
 }
 
-.containerMensagens{
-    width: 90%;
-    height:580px;
-    background-color: white;
+#containerUsuario {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  margin-left: 40px;
+  gap: 16px;
+  
 }
 
-.containerCriarMsg{
-    width:90%;
-    height: 80px;
-    background-color: white;
+.profilePic,
+.firstCharName {
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+}
+
+.firstCharName {
+  font-size: 40px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(175, 209, 238);
+}
+
+#containerNome {
+  height: 40px;
+  font-size: 30px;
+}
+
+.containerMensagens {
+  width: 90%;
+  height: 580px;
+  background-color: white;
+}
+
+.containerCriarMsg {
+  width: 90%;
+  height: 80px;
+  background-color: white;
 }
