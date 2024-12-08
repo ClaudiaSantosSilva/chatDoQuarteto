@@ -61,7 +61,7 @@ nav > ul > li > a {
   text-decoration: none;
 }
 
-main {
+#mainPaginaChat {
   width: 100vw;
   height: 1000px;
   display: flex;

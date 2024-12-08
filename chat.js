@@ -57,9 +57,9 @@ function identificarUsuario() {
 
 const containerGChat = document.createElement("div");
 containerGChat.setAttribute("id", "containerGChat");
-let main =
-  document.body.firstElementChild.nextElementSibling.nextElementSibling
-    .nextElementSibling;
+let main = document.getElementById("mainPaginaChat");
+  //document.body.firstElementChild.nextElementSibling.nextElementSibling
+    //.nextElementSibling;
 main.appendChild(containerGChat);
 
 function definirDonoChat() {

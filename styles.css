@@ -61,19 +61,20 @@ nav > ul > li > a {
   text-decoration: none;
 }
 
-main{
+#mainPaginaUsuarios{
+  margin-top: 150px;
     width: 100vw;
-    height: 1000px;
+    height: auto;
     display: flex;   
     justify-content: center;
-    align-items: center;
+    /* align-items: center;  */
 }
 
 #irListaUsuarios{
   width: 20%;
   background-color: antiquewhite;
     margin-top: 40px;
-    display: flex;
+    display: none;
     justify-content: center;
     margin-left: 840px;
     font-size: 22px;
