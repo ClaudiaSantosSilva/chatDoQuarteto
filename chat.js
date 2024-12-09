@@ -34,7 +34,7 @@ function obterDoLocalStorage(chave) {
 
 //IDENTIFICAR ID DO USUARIO DONO DA PAGINA DO CHAT, CLICADO NA LISTA USUARIOS
 
-function obterIdDonoPagina() { // 
+function obterIdDonoPagina() { 
   let urlLimpa = window.location.search;
   let idUsuario = new URLSearchParams(urlLimpa);
   let id = idUsuario.get("id");
@@ -146,7 +146,7 @@ function mostrarMensagem() {
    identificacaoUsuario.innerHTML = usuario.name;
    divDadosUsuario.appendChild(identificacaoUsuario)
        
-    divUsuario.appendChild(divDadosUsuario); //divUsuario recebendo a identificação do usuario
+    divUsuario.appendChild(divDadosUsuario); //divUsuario recebendo todos os dados do usuario
 
     const espacoMensagem = document.createElement("div"); //lugar da mensagem digitada na tela
     espacoMensagem.classList.add("espacoMensagem");

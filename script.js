@@ -65,9 +65,13 @@ let usuarios = obterDoLocalStorage("usuarios").map(
 function exibirListaPerfis() {
   usuarios.forEach((usuario) => {
     const containerUsuario = document.createElement("div");
-    containerUsuario.addEventListener("click", () => {
+    // containerUsuario.addEventListener("click", () => { //encaminha para pagina do usuario clicado
+    //   window.location.href = usuario.generateURL();
+    // });
+    containerUsuario.onclick = ()=> {
+      //encaminha para pagina do usuario clicado
       window.location.href = usuario.generateURL();
-    });
+    };
     containerUsuario.setAttribute("id", "containerUsuario");
 
     //console.log(usuario.generateURL());
