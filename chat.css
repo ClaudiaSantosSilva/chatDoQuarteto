@@ -119,7 +119,6 @@ nav > ul > li > a {
   justify-content: start;
   margin-left: 40px;
   gap: 16px;
-  
 }
 
 .profilePic,
@@ -150,7 +149,92 @@ nav > ul > li > a {
 }
 
 .containerCriarMsg {
+  /*div onde está input acima*/
   width: 90%;
   height: 80px;
   background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+}
+
+.novaMensagem {
+  /*input*/
+  width: 98%;
+  height: 60px;
+  background-color: rgb(206, 228, 248);
+  border-radius: 30px;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.espacoMensagem {
+  width: 50%;
+  background-color: aliceblue;
+  height: auto;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 10px 0 0 10px;
+  font-size: 16px;
+}
+
+.espacoData {
+  width: 50%;
+  height: auto;
+  padding: 10px;
+  font-size: 12px;
+  display: flex;
+  justify-content: end;
+}
+
+.divDadosUsuario {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.divDadosUsuario > img,
+.divDadosUsuario > .firstCharName {
+  height: 40px;
+  width: 40px;
+}
+
+.divDadosUsuario > span {
+  font-weight: 600;
+}
+
+.divUsuario {
+  width: 100%;
+  height: auto;
+}
+
+.divOutroUsuario {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.divOutroUsuario > .divDadosUsuario {
+  width: 95%;
+  display: flex;
+  justify-content: end;
+}
+
+.divOutroUsuario > .espacoData {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.divOutroUsuario > .espacoMensagem {
+  width: 50%;
+  margin-left: 49%;
+  background-color: beige;
 }
