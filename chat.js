@@ -106,7 +106,7 @@ containerCriarMsg.appendChild(campoEscreverMsg);
 function capturarMensagem() {
   const novaMensagem = campoEscreverMsg.value;
   const mensagem = new Message(novaMensagem, obterIdDonoPagina());
-  if (mensagem) {
+  if (mensagem && mensagem.length !==0) {
     const mensagens = obterDoLocalStorage("mensagens") || [];
     mensagens.push(mensagem);
     salvarNoLocalStorage("mensagens", mensagens);
@@ -168,6 +168,7 @@ function mostrarMensagem() {
 }
 
 window.addEventListener("storage", mostrarMensagem);
+mostrarMensagem();
 
 function handleEnter(evento, callback) {
   if (evento.code === "Enter") {

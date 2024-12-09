@@ -146,10 +146,11 @@ nav > ul > li > a {
   width: 90%;
   height: 580px;
   background-color: white;
+  overflow: auto;   
 }
 
 .containerCriarMsg {
-  /*div onde está input acima*/
+  /*div onde está input*/
   width: 90%;
   height: 80px;
   background-color: white;
