@@ -56,8 +56,7 @@ haUsuariosLocalStorage();
 
 const containerG = document.createElement("div");
 containerG.setAttribute("id", "containerG");
-let main = document.getElementById("mainPaginaUsuarios");
-  //document.body.firstElementChild.nextElementSibling.nextElementSibling;
+let main = document.getElementById("mainPaginaUsuarios");  
 main.appendChild(containerG);
 
 let usuarios = obterDoLocalStorage("usuarios").map(
