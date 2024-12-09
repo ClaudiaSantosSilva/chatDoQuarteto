@@ -34,14 +34,15 @@ function obterDoLocalStorage(chave) {
 
 //IDENTIFICAR ID DO USUARIO DONO DA PAGINA DO CHAT, CLICADO NA LISTA USUARIOS
 
-function obterIdDonoPagina() { 
+function obterIdDonoPagina() {
   let urlLimpa = window.location.search;
   let idUsuario = new URLSearchParams(urlLimpa);
   let id = idUsuario.get("id");
   return id;
 }
 
-function identificarUsuario() { //obtenho o usuario com base em seu id identificado acima
+function identificarUsuario() {
+  //obtenho o usuario com base em seu id identificado acima
   let usuarios = obterDoLocalStorage("usuarios").map(
     (objeto) => new User(objeto.id, objeto.name, objeto.profilePictureURL)
   );
@@ -49,7 +50,7 @@ function identificarUsuario() { //obtenho o usuario com base em seu id identific
   let usuario = usuarios.find((u) => u.id === id);
   if (usuario) {
     //console.log(usuario);
-    return usuario; 
+    return usuario;
   } else {
     window.location.href = "index.html"; //se o usuario não existir, volta para a lista
   }
@@ -106,7 +107,7 @@ containerCriarMsg.appendChild(campoEscreverMsg);
 function capturarMensagem() {
   const novaMensagem = campoEscreverMsg.value;
   const mensagem = new Message(novaMensagem, obterIdDonoPagina());
-  if (mensagem && mensagem.length !==0) {
+  if (mensagem && mensagem.length !== 0) {
     const mensagens = obterDoLocalStorage("mensagens") || [];
     mensagens.push(mensagem);
     salvarNoLocalStorage("mensagens", mensagens);
@@ -118,34 +119,34 @@ function mostrarMensagem() {
   let usuarios = obterDoLocalStorage("usuarios").map(
     (objeto) => new User(objeto.id, objeto.name, objeto.profilePictureURL)
   );
-  
+
   containerMensagens.innerHTML = " ";
 
   mensagens.forEach((mensagem) => {
     let usuario = usuarios.find((u) => u.id === mensagem.authorId);
 
-    const divUsuario = document.createElement("div") // recebe tudo relacionado a cada usuario: foto, nome, msg e data.
-    divUsuario.classList.add("divUsuario")
-    
+    const divUsuario = document.createElement("div"); // recebe tudo relacionado a cada usuario: foto, nome, msg e data.
+    divUsuario.classList.add("divUsuario");
+
     const divDadosUsuario = document.createElement("div"); // div para foto e nome do usuario
     divDadosUsuario.classList.add("divDadosUsuario");
 
-   if (usuario.profilePictureURL) {
-     const containerProfilePic = document.createElement("img");
-     containerProfilePic.setAttribute("src", usuario.profilePictureURL);
-     containerProfilePic.classList.add("profilePic");
-     divDadosUsuario.appendChild(containerProfilePic);
-   } else {
-     const containerNameInitial = document.createElement("div");
-     containerNameInitial.classList.add("firstCharName");
-     containerNameInitial.innerHTML = usuario.nameInitial;
-     divDadosUsuario.appendChild(containerNameInitial);
-   }
+    if (usuario.profilePictureURL) {
+      const containerProfilePic = document.createElement("img");
+      containerProfilePic.setAttribute("src", usuario.profilePictureURL);
+      containerProfilePic.classList.add("profilePic");
+      divDadosUsuario.appendChild(containerProfilePic);
+    } else {
+      const containerNameInitial = document.createElement("div");
+      containerNameInitial.classList.add("firstCharName");
+      containerNameInitial.innerHTML = usuario.nameInitial;
+      divDadosUsuario.appendChild(containerNameInitial);
+    }
 
-   let identificacaoUsuario = document.createElement("span");
-   identificacaoUsuario.innerHTML = usuario.name;
-   divDadosUsuario.appendChild(identificacaoUsuario)
-       
+    let identificacaoUsuario = document.createElement("span");
+    identificacaoUsuario.innerHTML = usuario.name;
+    divDadosUsuario.appendChild(identificacaoUsuario);
+
     divUsuario.appendChild(divDadosUsuario); //divUsuario recebendo todos os dados do usuario
 
     const espacoMensagem = document.createElement("div"); //lugar da mensagem digitada na tela
@@ -160,15 +161,15 @@ function mostrarMensagem() {
 
     containerMensagens.appendChild(divUsuario);
 
- if(obterIdDonoPagina() !== mensagem.authorId){
- divUsuario.classList.replace("divUsuario", "divOutroUsuario")
-   }
-
-  }); 
+    if (obterIdDonoPagina() !== mensagem.authorId) {
+      divUsuario.classList.replace("divUsuario", "divOutroUsuario");
+    }
+    campoEscreverMsg.value = " ";
+  });
 }
 
 window.addEventListener("storage", mostrarMensagem);
-mostrarMensagem();
+//mostrarMensagem();
 
 function handleEnter(evento, callback) {
   if (evento.code === "Enter") {
