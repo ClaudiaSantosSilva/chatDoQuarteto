@@ -15,10 +15,14 @@ class User {
 }
 
 class Message {
-  constructor(content, authorId) {
+  constructor(content, authorId, createdAt) {
     this.content = content;
     this.authorId = authorId;
+    if(createdAt){
+      this.createdAt = createdAt;
+    } else{
     this.createdAt = new Date();
+    }
   }
 }
 
