@@ -106,8 +106,9 @@ containerCriarMsg.appendChild(campoEscreverMsg);
 
 function capturarMensagem() {
   const novaMensagem = campoEscreverMsg.value;
-  const mensagem = new Message(novaMensagem, obterIdDonoPagina());
-  if (mensagem && mensagem.length !== 0) {
+  
+  if (novaMensagem && novaMensagem.length !== 0) {
+    const mensagem = new Message(novaMensagem, obterIdDonoPagina());
     const mensagens = obterDoLocalStorage("mensagens") || [];
     mensagens.push(mensagem);
     salvarNoLocalStorage("mensagens", mensagens);
@@ -156,7 +157,7 @@ function mostrarMensagem() {
 
     const espacoData = document.createElement("div"); //lugar para a hora
     espacoData.classList.add("espacoData");
-    espacoData.textContent = mensagem.createdAt;
+    espacoData.textContent = new Date(mensagem.createdAt).toLocaleString();
     divUsuario.appendChild(espacoData);
 
     containerMensagens.appendChild(divUsuario);
@@ -164,7 +165,8 @@ function mostrarMensagem() {
     if (obterIdDonoPagina() !== mensagem.authorId) {
       divUsuario.classList.replace("divUsuario", "divOutroUsuario");
     }
-    campoEscreverMsg.value = " ";
+    campoEscreverMsg.value = "";
+    divUsuario.scrollIntoView();
   });
 }
 
