@@ -1,14 +1,6 @@
 //CLASSES
 
 //LOCAL STORAGE
-function salvarNoLocalStorage(chave, valor) {
-  localStorage.setItem(chave, JSON.stringify(valor));
-}
-
-function obterDoLocalStorage(chave) {
-  const valor = localStorage.getItem(chave);
-  return valor ? JSON.parse(valor) : [];
-}
 
 //IDENTIFICAR ID DO USUARIO DONO DA PAGINA DO CHAT, CLICADO NA LISTA USUARIOS
 
